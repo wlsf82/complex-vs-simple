@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>cy.handsOn('complexity-vs-simplicity')</title>
+    <style>
+      * {
+        font-family: sans-serif;
+      }
+      h1 {
+        color: darkslategrey
+      }
+      .img {
+        display: flex;
+      }
+      img {
+        padding: 8px;
+        border: 8px inset darkslategrey;
+      }
+      button {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-left: -18px;
+        margin-right: 4px;
+        margin-top: -11px;
+        border-color: red;
+        color: red;
+        background-color: white;
+        font-size: large;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Complexity vs. simplicity</h1>
+    <div class="img">
+      <img src="./sampleImg.png" alt="piece of a big sur road">
+      <button id="btn-img">X</button>
+    </div>
+    <script>
+      const btn = document.getElementById('btn-img')
+      btn.addEventListener('click', removeImg, false)
+      function removeImg() {
+        document.querySelector('img[src="./sampleImg.png"]').src='./empty.png'
+        btn.removeEventListener('click', removeImg, false)
+      }
+    </script>
+  </body>
+</html>
